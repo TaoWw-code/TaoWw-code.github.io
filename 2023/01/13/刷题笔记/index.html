@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>刷题笔记 | TaoWw-code</title>
+  <meta name="keywords" content=" 力扣刷题 ">
+  <meta name="description" content="刷题笔记 | TaoWw-code">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="面经总结  记录前端各个公司面试所问知识点 目录拼多多面经总结css: css中水平居中有什么不同的方式？  水平居中：1、行内元素，给父元素设置text-align: center 2、若是块级元素, 该元素设置 margin:0 auto即可 3、使用flex 2012版本布局，可轻松实现居中： 1234.son &amp;#123;  display: flex;  justify-content:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面经总结">
+<meta property="og:url" content="http://example.com/2023/01/29/%E9%9D%A2%E7%BB%8F%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="TaoWw-code">
+<meta property="og:description" content="面经总结  记录前端各个公司面试所问知识点 目录拼多多面经总结css: css中水平居中有什么不同的方式？  水平居中：1、行内元素，给父元素设置text-align: center 2、若是块级元素, 该元素设置 margin:0 auto即可 3、使用flex 2012版本布局，可轻松实现居中： 1234.son &amp;#123;  display: flex;  justify-content:">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-01-29T01:26:22.000Z">
+<meta property="article:modified_time" content="2023-01-30T06:30:44.326Z">
+<meta property="article:author" content="TaoWw">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>TaoWw</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="rss"
+               href="/atom.xml"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-rss"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="github"
+               href="https://github.com/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="facebook"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-facebook"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="instagram"
+               href="https://www.facebook.com/faker.tops"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-instagram"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="reddit"
+               href="https://www.reddit.com/user/yelog/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-reddit"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="weibo"
+               href="http://weibo.com/u/2307534817"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/ff56736de7cf"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="zhihu"
+               href="https://www.zhihu.com/people/jaytp/activities"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-zhihu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="oschina"
+               href="https://my.oschina.net/yelog"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-oschina"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:jaytp@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="kugou"
+               href="https://www.kugou.com/"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-kugou"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=88151013"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(5)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="大前端">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        大前端
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="大前端<--->心得体会">
+                                        
+                                        心得体会
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="书籍">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        书籍
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="书籍<--->技术类">
+                                        
+                                        技术类
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="刷题">
+                        <i class="fold iconfont icon-right"></i>
+                        
+                        刷题
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                        <ul class="sub hide">
+                            
+                                <li>
+                                    <div data-rel="刷题<--->力扣">
+                                        
+                                        力扣
+                                        
+                                            <small>(1
+                                                )</small>
+                                        
+                                    </div>
+                                    
+                                </li>
+                            
+                        </ul>
+                    
+                </li>
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="5">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>力扣刷题</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>前端</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>git学习</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All "
+           href="/2023/01/29/%E9%9D%A2%E7%BB%8F%E6%80%BB%E7%BB%93/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="面经总结">面经总结</span>
+            <span class="post-date" title="2023-01-29 09:26:22">2023/01/29</span>
+        </a>
+        
+        
+        <a  class="All 刷题 力扣 "
+           href="/2023/01/13/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/"
+           data-tag="力扣刷题"
+           data-author="" >
+            <span class="post-title" title="刷题笔记">刷题笔记</span>
+            <span class="post-date" title="2023-01-13 12:18:10">2023/01/13</span>
+        </a>
+        
+        
+        <a  class="All 书籍 技术类 "
+           href="/2022/11/02/git/"
+           data-tag="git学习"
+           data-author="" >
+            <span class="post-title" title="Pro Git">Pro Git</span>
+            <span class="post-date" title="2022-11-02 20:31:26">2022/11/02</span>
+        </a>
+        
+        
+        <a  class="All 大前端 心得体会 "
+           href="/2022/10/29/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%95%A3%E8%AE%B0/"
+           data-tag="前端"
+           data-author="" >
+            <span class="post-title" title="前端学习散记">前端学习散记</span>
+            <span class="post-date" title="2022-10-29 17:26:26">2022/10/29</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2022/10/29/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2022-10-29 11:46:03">2022/10/29</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-刷题笔记" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">刷题笔记</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="刷题">刷题</a> > 
+            
+            <a  data-rel="刷题&lt;---&gt;力扣">力扣</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color5">力扣刷题</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2023-01-29 22:25:23'>2023-01-13 12:18</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0"><span class="toc-text">刷题笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95"><span class="toc-text">回溯算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC77%E9%A2%98-%E7%BB%84%E5%90%88"><span class="toc-text">第77题.组合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC216%E9%A2%98-%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C"><span class="toc-text">第216题.组合总和</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC131%E9%A2%98-%E5%88%86%E5%89%B2%E5%9B%9E%E6%96%87%E4%B8%B2"><span class="toc-text">第131题.分割回文串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC93%E9%A2%98-IP%E5%9C%B0%E5%9D%80"><span class="toc-text">第93题. IP地址</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC78%E9%A2%98-%E5%AD%90%E9%9B%86"><span class="toc-text">第78题. 子集</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC90%E9%A2%98-%E5%AD%90%E9%9B%86%E4%BA%8C"><span class="toc-text">第90题. 子集二</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC491%E9%A2%98-%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97"><span class="toc-text">第491题. 递增子序列</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC46%E9%A2%98-%E5%85%A8%E6%8E%92%E5%88%97"><span class="toc-text">第46题. 全排列</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC47%E9%A2%98-%E5%85%A8%E6%8E%92%E5%88%97%E4%BA%8C"><span class="toc-text">第47题 全排列二</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC51%E9%A2%98-n%E7%9A%87%E5%90%8E"><span class="toc-text">第51题 n皇后</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC37%E9%A2%98-%E8%A7%A3%E7%8B%AC%E6%95%B0"><span class="toc-text">第37题 解独数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC17%E9%A2%98-%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88"><span class="toc-text">第17题 电话号码的字母组合</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95"><span class="toc-text">贪心算法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC455%E9%A2%98-%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2"><span class="toc-text">第455题 分发饼干</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC376%E9%A2%98-%E6%91%86%E5%8A%A8%E5%BA%8F%E5%88%97"><span class="toc-text">第376题 摆动序列</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC53%E9%A2%98-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%90%88"><span class="toc-text">第53题 最大子数组合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC122%E9%A2%98-%E4%B9%B0%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%E4%BA%8C"><span class="toc-text">第122题 买股票的最佳时机二</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC55%E9%A2%98-%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F"><span class="toc-text">第55题 跳跃游戏</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC45%E9%A2%98-%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F%E4%BA%8C"><span class="toc-text">第45题 跳跃游戏二</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC1005%E9%A2%98-K%E6%AC%A1%E5%8F%96%E5%8F%8D%E5%90%8E%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C"><span class="toc-text">第1005题  K次取反后最大化的数组和</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC134%E9%A2%98-%E5%8A%A0%E6%B2%B9%E7%AB%99"><span class="toc-text">第134题 加油站</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC135%E9%A2%98-%E5%88%86%E5%8F%91%E7%B3%96%E6%9E%9C"><span class="toc-text">第135题 分发糖果</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC406%E9%A2%98-%E6%A0%B9%E6%8D%AE%E8%BA%AB%E9%AB%98%E9%87%8D%E6%96%B0%E6%8E%92%E5%88%97"><span class="toc-text">第406题 根据身高重新排列</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AC%AC452%E9%A2%98-%E7%94%A8%E6%9C%80%E5%B0%91%E6%95%B0%E7%9B%AE%E7%9A%84%E7%AE%AD%E5%B0%84%E7%88%86%E6%B0%94%E7%90%83"><span class="toc-text">第452题 用最少数目的箭射爆气球</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="刷题笔记"><a href="#刷题笔记" class="headerlink" title="刷题笔记"></a>刷题笔记</h2><p>边界、自增、迭代量</p>
+<p>将自己的想法（数学逻辑）用代码实现，理清思路，主动去写</p>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li><a href="#%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95">回溯算法</a><ul>
+<li><a href="#%E7%AC%AC77%E9%A2%98%E7%BB%84%E5%90%88">第77题-组合</a></li>
+<li><a href="#%E7%AC%AC216%E9%A2%98%E7%BB%84%E5%90%88%E6%80%BB%E5%92%8C">第216题-组合总和</a></li>
+<li><a href="#%E7%AC%AC131%E9%A2%98%E5%88%86%E5%89%B2%E5%9B%9E%E6%96%87%E4%B8%B2">第131题-分割回文串</a></li>
+<li><a href="#%E7%AC%AC93%E9%A2%98-ip%E5%9C%B0%E5%9D%80">第93题-ip地址</a></li>
+<li><a href="#%E7%AC%AC78%E9%A2%98-%E5%AD%90%E9%9B%86">第78题-子集</a></li>
+<li><a href="#%E7%AC%AC90%E9%A2%98-%E5%AD%90%E9%9B%86%E4%BA%8C">第90题-子集二</a></li>
+<li><a href="#%E7%AC%AC491%E9%A2%98-%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97">第491题-递增子序列</a></li>
+<li><a href="#%E7%AC%AC46%E9%A2%98-%E5%85%A8%E6%8E%92%E5%88%97">第46题-全排列</a></li>
+<li><a href="#%E7%AC%AC47%E9%A2%98-%E5%85%A8%E6%8E%92%E5%88%97%E4%BA%8C">第47题-全排列二</a></li>
+<li><a href="#%E7%AC%AC51%E9%A2%98-n%E7%9A%87%E5%90%8E">第51题-n皇后</a></li>
+<li><a href="#%E7%AC%AC37%E9%A2%98-%E8%A7%A3%E7%8B%AC%E6%95%B0">第37题-解独数</a></li>
+<li><a href="#%E7%AC%AC17%E9%A2%98-%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88">第17题-电话号码的字母组合</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95">贪心算法</a><ul>
+<li><a href="#%E7%AC%AC455%E9%A2%98-%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2">第455题-分发饼干</a></li>
+<li><a href="#%E7%AC%AC376%E9%A2%98-%E6%91%86%E5%8A%A8%E5%BA%8F%E5%88%97">第376题-摆动序列</a></li>
+<li><a href="#%E7%AC%AC53%E9%A2%98-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%90%88">第53题-最大子数组合</a></li>
+<li><a href="#%E7%AC%AC122%E9%A2%98-%E4%B9%B0%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA%E4%BA%8C">第122题-买股票的最佳时机二</a></li>
+<li><a href="#%E7%AC%AC55%E9%A2%98-%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F">第55题-跳跃游戏</a></li>
+<li><a href="#%E7%AC%AC45%E9%A2%98-%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F%E4%BA%8C">第45题-跳跃游戏二</a></li>
+<li><a href="#%E7%AC%AC1005%E9%A2%98-k%E6%AC%A1%E5%8F%96%E5%8F%8D%E5%90%8E%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C">第1005题-k次取反后最大化的数组和</a></li>
+<li><a href="#%E7%AC%AC134%E9%A2%98-%E5%8A%A0%E6%B2%B9%E7%AB%99">第134题-加油站</a></li>
+<li><a href="#%E7%AC%AC135%E9%A2%98-%E5%88%86%E5%8F%91%E7%B3%96%E6%9E%9C">第135题-分发糖果</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h4><p>解决问题：排列，组合，分割，棋盘、子集问题<br>注意事项：去重（树枝与树层两个方向）、剪枝<br>回溯算法的通用模板：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">backtraking</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(终止条件) &#123;</span><br><span class="line">    对最终结果进行处理</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(树同一层宽度进行遍历) &#123;</span><br><span class="line">    处理节点</span><br><span class="line">    <span class="title function_">backtracking</span>()  进行递归，注意递归函数的参数传递</span><br><span class="line">    回溯，对节点进行撤销</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>常见的难点增加：在回溯过程中，有些得到的结果并不符合要求，对所得结果是否符合要求进行判断并适当进行去重，就成为增加回溯算法难度的常用考点</p>
+<h5 id="第77题-组合"><a href="#第77题-组合" class="headerlink" title="第77题.组合"></a>第77题.组合</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combinations/">力扣题目链接</a></p>
+<p>给定两个整数 n 和 k，返回范围 [1, n] 中所有可能的 k 个数的组合。<br>你可以按 任何顺序 返回答案。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 4, k = 2</span><br><span class="line">输出：</span><br><span class="line">[</span><br><span class="line">  [2,4],</span><br><span class="line">  [3,4],</span><br><span class="line">  [2,3],</span><br><span class="line">  [1,2],</span><br><span class="line">  [1,3],</span><br><span class="line">  [1,4],</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">提示：</span><br><span class="line">1 &lt;= n &lt;= 20</span><br><span class="line">1 &lt;= k &lt;= n</span><br></pre></td></tr></table></figure>
+<p>解题思路：采用回溯算法，终止条件为path.length === k，回溯还是采用for循环，最开始的startIndex从1开始</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> combine = <span class="keyword">function</span>(<span class="params">n , k</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> res = [], path = []</span><br><span class="line">  <span class="title function_">backtracking</span>(<span class="number">1</span>)</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">backtracking</span>(<span class="params">startIndex</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(path.<span class="property">length</span> === k) &#123;</span><br><span class="line">      res.<span class="title function_">push</span>([...path])</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = startIndex; i &lt;= n -(k-path.<span class="property">length</span>) + <span class="number">1</span>; i++) &#123;</span><br><span class="line">      path.<span class="title function_">push</span>(i)</span><br><span class="line">      <span class="title function_">backtracking</span>(i+<span class="number">1</span>)</span><br><span class="line">      path.<span class="title function_">pop</span>()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：剪枝。需要的组合中数字的个数为k，当i到达一定数值时，就没有办法满足组合中元素个数为k的条件，所以剪枝  i &lt;= n -(k-path.length) + 1</p>
+<h5 id="第216题-组合总和"><a href="#第216题-组合总和" class="headerlink" title="第216题.组合总和"></a>第216题.组合总和</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combination-sum-iii/">力扣题目链接</a></p>
+<p>读题后思路：需要回溯，从同一个集合里面进行寻找，所以需要startIndex，并且不能够有重复的数字，在树枝方向（递归过程中）需要去重，所以每次递归需要传入startIndex+1</p>
+<p>代码： </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = []</span><br><span class="line"><span class="keyword">var</span> path = []</span><br><span class="line"><span class="keyword">var</span> <span class="title function_">dfs</span> = (<span class="params">k,n,startIndex,sum</span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span>(sum &gt; n) <span class="keyword">return</span>          <span class="comment">//相加，所以当sum大于n时，需要返回</span></span><br><span class="line">    <span class="keyword">if</span>(path.<span class="property">length</span> === k) &#123;     <span class="comment">//当path.length === k，还需要进行考虑</span></span><br><span class="line">        <span class="keyword">if</span>(sum === n) &#123;</span><br><span class="line">            result.<span class="title function_">push</span>([...path])</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = startIndex; i &lt;= <span class="number">9</span>-(k-path.<span class="property">length</span>)+<span class="number">1</span>; i++) &#123;</span><br><span class="line">        path.<span class="title function_">push</span>(i)</span><br><span class="line">        sum +=i</span><br><span class="line">        <span class="title function_">dfs</span>(k,n,i+<span class="number">1</span>,sum)</span><br><span class="line">        sum -=i</span><br><span class="line">        path.<span class="title function_">pop</span>()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> combinationSum3 = <span class="keyword">function</span>(<span class="params">k, n</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> sum = <span class="number">0</span></span><br><span class="line">    result = []</span><br><span class="line">    <span class="title function_">dfs</span>(k,n,<span class="number">1</span>,sum)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>注意：本题难点是第二条终止条件，当path.length === k时一定需要返回，这个时候需要考虑sum === n，所以是两个if语句，而不是 path.length === k &amp;&amp; sum === n</p>
+<h5 id="第131题-分割回文串"><a href="#第131题-分割回文串" class="headerlink" title="第131题.分割回文串"></a>第131题.分割回文串</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/palindrome-partitioning/">力扣题目链接</a></p>
+<p>解题思路：进行回溯，需要考虑所以的回文串，需要对是否为回文串进行判断，其他照着模板即可</p>
+<p>代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; <span class="variable">s</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">string[][]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> isPalindrome = <span class="keyword">function</span>(<span class="params">l,r,str</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=l,j=r;i&lt;j;i++,j--) &#123;</span><br><span class="line">        <span class="keyword">if</span>(str[i] !==str[j]) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> partition = <span class="keyword">function</span>(<span class="params">s</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> path =[],res =[]</span><br><span class="line">    <span class="keyword">let</span> str =s</span><br><span class="line">    <span class="keyword">let</span> len = str.<span class="property">length</span></span><br><span class="line">    <span class="title function_">backtracking</span>(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">backtracking</span>(<span class="params">startIndex</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(startIndex &gt;=len) &#123;</span><br><span class="line">            res.<span class="title function_">push</span>(<span class="title class_">Array</span>.<span class="title function_">from</span>(path))</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=startIndex;i&lt;str.<span class="property">length</span>;i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(!<span class="title function_">isPalindrome</span>(startIndex,i,str)) <span class="keyword">continue</span></span><br><span class="line">            path.<span class="title function_">push</span>(str.<span class="title function_">slice</span>(startIndex,i+<span class="number">1</span>))</span><br><span class="line">            <span class="title function_">backtracking</span>(i+<span class="number">1</span>,str,len)</span><br><span class="line">            path.<span class="title function_">pop</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：isPalindrome()函数判断的传入是左闭右闭区间，而String.slice()是左闭右开的，所以传参有所差别</p>
+<h5 id="第93题-IP地址"><a href="#第93题-IP地址" class="headerlink" title="第93题. IP地址"></a>第93题. IP地址</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/restore-ip-addresses/">力扣题目链接</a></p>
+<p>解题思路：本题也属于分割问题，需要对分割的字符串进行判断，是否满足IP地址要求</p>
+<p>代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> restoreIpAddresses = <span class="keyword">function</span>(<span class="params">s</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> path = [], res = []</span><br><span class="line">    <span class="title function_">backtracking</span>(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">backtracking</span>(<span class="params">startIndex</span>) &#123;</span><br><span class="line">        <span class="comment">// if(path.length &gt; 4) return </span></span><br><span class="line">        <span class="comment">// if(path.length === 4 &amp;&amp; startIndex === s.length) &#123;</span></span><br><span class="line">        <span class="comment">//     res.push(path.join(&#x27;.&#x27;))</span></span><br><span class="line">        <span class="comment">//     return</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">        <span class="keyword">if</span>(path.<span class="property">length</span> === <span class="number">4</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(startIndex === s.<span class="property">length</span>) &#123;</span><br><span class="line">                res.<span class="title function_">push</span>(path.<span class="title function_">join</span>(<span class="string">&#x27;.&#x27;</span>))</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = startIndex;i &lt; s.<span class="property">length</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">const</span> str = s.<span class="title function_">slice</span>(startIndex,i+<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">if</span>(str.<span class="property">length</span> &gt; <span class="number">3</span> || +str &gt; <span class="number">255</span>) <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">if</span>(str.<span class="property">length</span> !== <span class="number">1</span> &amp;&amp; str[<span class="number">0</span>] === <span class="string">&#x27;0&#x27;</span>) <span class="keyword">break</span>        <span class="comment">//当出现不满足的情况时，往下是没有意义的，所以跳出</span></span><br><span class="line">            path.<span class="title function_">push</span>(str)</span><br><span class="line">            <span class="title function_">backtracking</span>(i+<span class="number">1</span>)</span><br><span class="line">            path.<span class="title function_">pop</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：1、JavaScript中一些数组与字符串API的使用要熟练；2、终止条件进行优化，当<code>path.length === 4</code>时就需要返还，但是此时还需要对<code>startIndex === s.length</code>进行再次判断<br>         2、当不满足情况时，大多数是continue，因为后面还有可能满足的情况，而此处是不可能出现满足的情况，就直接break</p>
+<h5 id="第78题-子集"><a href="#第78题-子集" class="headerlink" title="第78题. 子集"></a>第78题. 子集</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/subsets/">力扣题目链接</a></p>
+<p>解题思路：就是一个回溯求子集，对于每一个子集都需要，当<code>path.length === len</code>时返还</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> subsets = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> path = [] , res = [], len = nums.<span class="property">length</span></span><br><span class="line">    <span class="title function_">backtracking</span>(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">backtracking</span>(<span class="params">startIndex</span>) &#123;</span><br><span class="line">        res.<span class="title function_">push</span>([...path])</span><br><span class="line">        <span class="keyword">if</span>(path.<span class="property">length</span> === len) <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = startIndex; i &lt; len; i++) &#123;</span><br><span class="line">            path.<span class="title function_">push</span>(nums[i])</span><br><span class="line">            <span class="title function_">backtracking</span>(i+<span class="number">1</span>)       <span class="comment">//边界、自增、迭代量，小地方一定要注意，++这用法要注意的问题</span></span><br><span class="line">            path.<span class="title function_">pop</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>注意：本题实际上可以不需要终止条件</p>
+<h5 id="第90题-子集二"><a href="#第90题-子集二" class="headerlink" title="第90题. 子集二"></a>第90题. 子集二</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/subsets-ii/">力扣题目链接</a></p>
+<p>解题思路：跟子集思路相同，需要进行同层去重</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[][]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> subsetsWithDup = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    nums.<span class="title function_">sort</span>(<span class="function">(<span class="params">a,b</span>) =&gt;</span> a-b)   <span class="comment">//不需要带&#123;&#125;</span></span><br><span class="line">    <span class="keyword">let</span> path = [] , res = [] , len = nums.<span class="property">length</span></span><br><span class="line">    <span class="title function_">backtracking</span>(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">backtracking</span>(<span class="params">startIndex</span>) &#123;</span><br><span class="line">        res.<span class="title function_">push</span>(<span class="title class_">Array</span>.<span class="title function_">from</span>(path))</span><br><span class="line">        <span class="comment">// if(path.length === len) return</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = startIndex; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(i &gt; startIndex &amp;&amp; nums[i] === nums[i-<span class="number">1</span>]) <span class="keyword">continue</span></span><br><span class="line">            path.<span class="title function_">push</span>(nums[i])</span><br><span class="line">            <span class="title function_">backtracking</span>(i+<span class="number">1</span>)</span><br><span class="line">            path.<span class="title function_">pop</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>注意:当对组合进行同层去重时，因为对顺序没有要求，可以先对集合进行排序，然后在根据<code>if(i &gt; startIndex &amp;&amp; nums[i] === nums[i-1]) continue</code>进行去重</p>
+<h5 id="第491题-递增子序列"><a href="#第491题-递增子序列" class="headerlink" title="第491题. 递增子序列"></a>第491题. 递增子序列</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/non-decreasing-subsequences/">力扣题目链接</a></p>
+<p>解题思路：使用回溯找出所有不重复的子序列，然后筛选出递增子序列即可</p>
+<p>代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> isDecreasing = <span class="keyword">function</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(arr.<span class="property">length</span> &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>, j = <span class="number">1</span>;j &lt; arr.<span class="property">length</span>; i++, j++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[j] - arr[i] &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> findSubsequences = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> path = [] , res = [] , len = nums.<span class="property">length</span></span><br><span class="line">    <span class="title function_">backtracking</span>(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">backtracking</span>(<span class="params">startIndex</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(path.<span class="property">length</span> &gt;= <span class="number">2</span> &amp;&amp; <span class="title function_">isDecreasing</span>(path)) res.<span class="title function_">push</span>(<span class="title class_">Array</span>.<span class="title function_">from</span>(path))</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = startIndex; i &lt; len; i++) &#123;</span><br><span class="line">             <span class="comment">//数组与字符串在js中有一些api是相同的，高频API需要注意</span></span><br><span class="line">            <span class="keyword">if</span>(i &gt; startIndex &amp;&amp; nums.<span class="title function_">slice</span>(startIndex,i).<span class="title function_">includes</span>(nums[i])) <span class="keyword">continue</span>  </span><br><span class="line">            path.<span class="title function_">push</span>(nums[i])</span><br><span class="line">            <span class="title function_">backtracking</span>(i+<span class="number">1</span>)</span><br><span class="line">            path.<span class="title function_">pop</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>注意：前文通过先对数组进行排序，然后<code>if(i &gt; startIndex &amp;&amp; nums[i] === nums[i-1]) continue</code>进行去重，而此处是有排序要求，所以只能通过<code>if(i &gt; startIndex &amp;&amp; nums.slice(startIndex,i).includes(nums[i])) continue</code>进行同层去重，同时由于求子序列需要把整个数组遍历完，并不需要终止条件</p>
+<h5 id="第46题-全排列"><a href="#第46题-全排列" class="headerlink" title="第46题. 全排列"></a>第46题. 全排列</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/permutations/">力扣题目链接</a></p>
+<p>解题思路：对整个数组进行遍历，因为从头到尾进行遍历，不需要树枝方向进行去重，所以不需要startIndex</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> permute = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> path = [] , res = [] , len = nums.<span class="property">length</span></span><br><span class="line">    <span class="title function_">backtracking</span>()</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">backtracking</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(path.<span class="property">length</span> === len) res.<span class="title function_">push</span>([...path])</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">const</span> v <span class="keyword">of</span> nums) &#123;</span><br><span class="line">            <span class="keyword">if</span>(path.<span class="title function_">includes</span>(v)) <span class="keyword">continue</span></span><br><span class="line">            path.<span class="title function_">push</span>(v)</span><br><span class="line">            <span class="title function_">backtracking</span>()</span><br><span class="line">            path.<span class="title function_">pop</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="第47题-全排列二"><a href="#第47题-全排列二" class="headerlink" title="第47题 全排列二"></a>第47题 全排列二</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/permutations-ii/">力扣题目地址</a></p>
+<p>解题思路：本题跟46题全排列多了一种去重，46题只有同树枝去重，而本题不但要进行同树枝去重，还需要对同层的进行去重，这个时候加入一个数组进行判断。当<code>used[i-1] = true</code>时，表示i-1在同一树枝上已经使用过；当<code>used[i-1] = false</code>时，表示同树层使用过</p>
+<p>代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[][]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> permuteUnique = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> path = [] , res = [] , len = nums.<span class="property">length</span></span><br><span class="line">    nums.<span class="title function_">sort</span>(<span class="function">(<span class="params">a , b</span>) =&gt;</span> a-b)</span><br><span class="line">    <span class="title function_">backtracking</span>([])</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">backtracking</span>(<span class="params">used</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(path.<span class="property">length</span> === len) &#123;</span><br><span class="line">            res.<span class="title function_">push</span>(<span class="title class_">Array</span>.<span class="title function_">from</span>(path)) </span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="comment">//used[i-1] = true  同一树枝上i-1元素使用过</span></span><br><span class="line">            <span class="comment">//used[i-1] = false  同一树层上i-1元素使用过</span></span><br><span class="line">            <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; nums[i] === nums[i-<span class="number">1</span>] &amp;&amp; !used[i-<span class="number">1</span>]) <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">if</span>(used[i]) <span class="keyword">continue</span></span><br><span class="line">                used[i] = <span class="literal">true</span></span><br><span class="line">                path.<span class="title function_">push</span>(nums[i])</span><br><span class="line">                <span class="title function_">backtracking</span>(used)</span><br><span class="line">                path.<span class="title function_">pop</span>()</span><br><span class="line">                used[i] = <span class="literal">false</span>               </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>注意：因为原始数组的顺序不影响全排列，所以可以先进行排序，然后同层去重</p>
+<h5 id="第51题-n皇后"><a href="#第51题-n皇后" class="headerlink" title="第51题 n皇后"></a>第51题 n皇后</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/n-queens/">力扣题目地址</a></p>
+<p>解题思路：棋牌问题，采用回溯，将棋盘的宽度作为同层的for循环，棋盘的长度作为回溯的深度即树枝的长度</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">n</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">string[][]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> solveNQueens = <span class="keyword">function</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> chessBoard = <span class="keyword">new</span> <span class="title class_">Array</span>(n).<span class="title function_">fill</span>([]).<span class="title function_">map</span>(<span class="function">() =&gt;</span> <span class="keyword">new</span> <span class="title class_">Array</span>(n).<span class="title function_">fill</span>(<span class="string">&#x27;.&#x27;</span>))</span><br><span class="line">    <span class="keyword">let</span> res = []</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">isValid</span>(<span class="params">row , col , chessBoard , n</span>) &#123;</span><br><span class="line">        <span class="comment">//判断当前位置是否合理，依据是是否跟已有的Q冲突</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>; i &lt; row; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(chessBoard[i][col] === <span class="string">&#x27;Q&#x27;</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = row -<span class="number">1</span>, j = col - <span class="number">1</span>; i &gt;= <span class="number">0</span> &amp;&amp; j&gt;= <span class="number">0</span>; i--, j--) &#123;</span><br><span class="line">            <span class="keyword">if</span>(chessBoard[i][j] === <span class="string">&#x27;Q&#x27;</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = row -<span class="number">1</span>, j = col + <span class="number">1</span>; i &gt;= <span class="number">0</span> &amp;&amp; j &lt; n; i--, j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(chessBoard[i][j] === <span class="string">&#x27;Q&#x27;</span>) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//将得到棋盘结果转换成一个数组</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">transChessBoard</span>(<span class="params">chessBoard</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> chessBoardBack = []</span><br><span class="line">        chessBoard.<span class="title function_">forEach</span>(<span class="function"><span class="params">row</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">let</span> rowStr = <span class="string">&#x27;&#x27;</span></span><br><span class="line">            row.<span class="title function_">forEach</span>(<span class="function"><span class="params">col</span> =&gt;</span> &#123;</span><br><span class="line">                rowStr += col</span><br><span class="line">            &#125;)</span><br><span class="line">            chessBoardBack.<span class="title function_">push</span>(rowStr)</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="keyword">return</span> chessBoardBack</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">backtracking</span>(<span class="params">row, chessBoard</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(row === n) &#123;</span><br><span class="line">            res.<span class="title function_">push</span>(<span class="title function_">transChessBoard</span>(chessBoard))</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(!<span class="title function_">isValid</span>(row, i, chessBoard, n)) <span class="keyword">continue</span></span><br><span class="line">            chessBoard[row][i] = <span class="string">&#x27;Q&#x27;</span></span><br><span class="line">            <span class="title function_">backtracking</span>(row + <span class="number">1</span>,chessBoard)</span><br><span class="line">            chessBoard[row][i] = <span class="string">&#x27;.&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">backtracking</span>(<span class="number">0</span>,chessBoard)</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="第37题-解独数"><a href="#第37题-解独数" class="headerlink" title="第37题 解独数"></a>第37题 解独数</h5><p>解题思路：本题与n皇后同为棋盘问题，但是有很大区别。n皇后只要能够保证有一个Q，就可以到下一行，解独数不行。解独数需要每一个位置都有一个对应的不同的数值，需要我们把整个棋盘都进行遍历，使用两个for循环对棋盘进行遍历，然后再来for循环进行选择使用哪个数值进行回溯</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">character[][]</span>&#125; <span class="variable">board</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">void</span>&#125; Do not return anything, modify board in-place instead.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> solveSudoku = <span class="keyword">function</span>(<span class="params">board</span>) &#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">isValid</span>(<span class="params">row, col, n,board</span>) &#123;</span><br><span class="line">        <span class="comment">//同行</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(board[row][j] === n) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(board[i][col] === n) <span class="keyword">return</span> <span class="literal">false</span> </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> rowStart = <span class="title class_">Math</span>.<span class="title function_">floor</span>(row / <span class="number">3</span>) * <span class="number">3</span></span><br><span class="line">        <span class="keyword">let</span> colStart = <span class="title class_">Math</span>.<span class="title function_">floor</span>(col / <span class="number">3</span>) * <span class="number">3</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = rowStart ; i &lt; rowStart + <span class="number">3</span> ; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">let</span> j =colStart; j &lt; colStart + <span class="number">3</span> ; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(board[i][j] === n) <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">backtracking</span>(<span class="params">board</span>) &#123;           <span class="comment">//为什么此处不需要传参</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">9</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">9</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span>(board[i][j] !== <span class="string">&#x27;.&#x27;</span>) <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">let</span> val = <span class="number">1</span>; val &lt;= <span class="number">9</span>; val++) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(<span class="title function_">isValid</span>(i, j, <span class="string">`<span class="subst">$&#123;val&#125;</span>`</span>, board)) &#123;</span><br><span class="line">                        board[i][j] = <span class="string">`<span class="subst">$&#123;val&#125;</span>`</span></span><br><span class="line">                        <span class="keyword">if</span> (<span class="title function_">backtracking</span>(board)) &#123;     <span class="comment">//在回溯中，递归函数的传参一定要注意</span></span><br><span class="line">                            <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">                        &#125;</span><br><span class="line">                        </span><br><span class="line">                        board[i][j] = <span class="string">&#x27;.&#x27;</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>   <span class="comment">// 如果在棋盘这个位置9个数都无法满足，证明就没有可以满足的条件，直接返还FALSE</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">backtracking</span>(board)         </span><br><span class="line">    <span class="keyword">return</span> board</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="第17题-电话号码的字母组合"><a href="#第17题-电话号码的字母组合" class="headerlink" title="第17题 电话号码的字母组合"></a>第17题 电话号码的字母组合</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/letter-combinations-of-a-phone-number/">力扣题目地址</a></p>
+<p>解题思路：需要一个map ，将数字对应的字母给表示出来，然后进行回溯</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; <span class="variable">digits</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">string[]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> letterCombinations = <span class="keyword">function</span>(<span class="params">digits</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> len = digits.<span class="property">length</span>                                     </span><br><span class="line">    <span class="keyword">let</span> map = [<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;&#x27;</span>,<span class="string">&#x27;abc&#x27;</span>,<span class="string">&#x27;def&#x27;</span>,<span class="string">&#x27;ghi&#x27;</span>,<span class="string">&#x27;jkl&#x27;</span>,<span class="string">&#x27;mno&#x27;</span>,<span class="string">&#x27;pqrs&#x27;</span>,<span class="string">&#x27;tuv&#x27;</span>,<span class="string">&#x27;wxyz&#x27;</span>]</span><br><span class="line">    <span class="keyword">if</span>(!len) <span class="keyword">return</span> []</span><br><span class="line">    <span class="keyword">if</span>(len === <span class="number">1</span>) <span class="keyword">return</span> map[digits].<span class="title function_">split</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line">    <span class="keyword">let</span> path =[], result = []</span><br><span class="line">    <span class="title function_">backtracking</span>(len,<span class="number">0</span>,digits)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">backtracking</span>(<span class="params">len,startIndex,str</span>) &#123;         <span class="comment">//变量的使用用注意明确</span></span><br><span class="line">        <span class="keyword">if</span>(path.<span class="property">length</span> === len) &#123;</span><br><span class="line">            result.<span class="title function_">push</span>(path.<span class="title function_">join</span>(<span class="string">&quot;&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">const</span> v <span class="keyword">of</span> map[str[startIndex]]) &#123;          <span class="comment">//遍历</span></span><br><span class="line">            path.<span class="title function_">push</span>(v)</span><br><span class="line">            <span class="title function_">backtracking</span>(len,startIndex+<span class="number">1</span>,str)</span><br><span class="line">            path.<span class="title function_">pop</span>()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>注意：此处回溯并没有使用startIndex，因为是从不同的组合拿，采用了遍历的方式。<code>map[digits].split(&quot;&quot;)</code>这里面的api是将字符串分割成数组，与join()  api相反，<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/split">split()链接</a></p>
+<h4 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h4><p>贪心算法最重要的一点，从局部最优推出全局最优</p>
+<h5 id="第455题-分发饼干"><a href="#第455题-分发饼干" class="headerlink" title="第455题 分发饼干"></a>第455题 分发饼干</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/assign-cookies/">力扣题目链接</a></p>
+<p>解题思路：将最大的饼干用来满足最大的胃口，这样就可以解决问题。贪心的代码一般比较简单，但是局部到整体的思路不容易想出来</p>
+<p>代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">g</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">s</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> findContentChildren = <span class="keyword">function</span>(<span class="params">g, s</span>) &#123;</span><br><span class="line">    g = g.<span class="title function_">sort</span>(<span class="function">(<span class="params">a,b</span>) =&gt;</span> a - b)</span><br><span class="line">    s = s.<span class="title function_">sort</span>(<span class="function">(<span class="params">a,b</span>) =&gt;</span> a - b)</span><br><span class="line">    <span class="keyword">let</span> res = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span>(s.<span class="property">length</span> === <span class="number">0</span>) <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">let</span> len1 = g.<span class="property">length</span> -<span class="number">1</span>, len2 = s.<span class="property">length</span> -<span class="number">1</span></span><br><span class="line">    <span class="comment">//let index = len2 -1   //边界、自增、迭代量；出现代码不顺的时候，看代码一定要每个符号都看清楚，不要略过；使用其他变量进行迭代时，一定要注意;不要声明过多变量</span></span><br><span class="line">    <span class="keyword">let</span> index = len2 </span><br><span class="line">    <span class="comment">// while(len1 &gt;= 0 &amp;&amp; len2 &gt;= 0) &#123;</span></span><br><span class="line">    <span class="comment">//     if(s[len2] &gt;= g[len1]) &#123;</span></span><br><span class="line">    <span class="comment">//         res +=1</span></span><br><span class="line">    <span class="comment">//         len1--</span></span><br><span class="line">    <span class="comment">//         len2--</span></span><br><span class="line">    <span class="comment">//     &#125;else &#123;</span></span><br><span class="line">    <span class="comment">//         len1 --</span></span><br><span class="line">    <span class="comment">//     &#125;</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = g.<span class="property">length</span>-<span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">if</span>(index &gt;= <span class="number">0</span> &amp;&amp; s[index] &gt;= g[i]) &#123;</span><br><span class="line">            res++</span><br><span class="line">            index--</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>注意：贪心一般用的是for循环，然后此题使用两个变量的方式需要注意</p>
+<h5 id="第376题-摆动序列"><a href="#第376题-摆动序列" class="headerlink" title="第376题 摆动序列"></a>第376题 摆动序列</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/wiggle-subsequence/">力扣题目链接</a></p>
+<p>解题思路：证明摆动序列的方式就如果求极值点，当左右符号不一样时即是。此题求最长摆动序列长度，可以理解为求最多极值点。</p>
+<p>代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> wiggleMaxLength = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> result = <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span>(nums.<span class="property">length</span> &lt;= <span class="number">1</span>) <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">let</span> preDiff = <span class="number">0</span>, curDiff = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">1</span>; i &lt; nums.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        curDiff = nums[i] - nums[i-<span class="number">1</span>]           <span class="comment">//通过局部极值推断长度</span></span><br><span class="line">        <span class="keyword">if</span>((preDiff &gt;= <span class="number">0</span> &amp;&amp; curDiff &lt; <span class="number">0</span>) || (preDiff &lt;= <span class="number">0</span> &amp;&amp; curDiff &gt; <span class="number">0</span>)) &#123;</span><br><span class="line">            result++</span><br><span class="line">            preDiff = curDiff</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="第53题-最大子数组合"><a href="#第53题-最大子数组合" class="headerlink" title="第53题 最大子数组合"></a>第53题 最大子数组合</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-subarray/">力扣题目链接</a></p>
+<p>解题思路：正数与正数相加会变大，正数与负数相加会变小。几个数相加为负数时，就应该舍弃掉，避免与其他数相加</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> maxSubArray = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> count = <span class="number">0</span>, res = -<span class="title class_">Infinity</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        count += nums[i]</span><br><span class="line">        <span class="keyword">if</span>(count &gt; res) res = count</span><br><span class="line">        <span class="keyword">if</span>(count &lt; <span class="number">0</span>) count = <span class="number">0</span>         <span class="comment">//对负数舍弃的最好方式，count = 0，这样前文就不会影响到后面，此题的精髓所在</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：此题代码简单，但是思路很难。<code>if(count &lt; 0) count = 0</code>是此题的精髓所在，一来舍弃掉为负的组合，会使局部优化；二来解决了一个困扰，单指针如何截出一个组合。刚开始想使用双指针发现很麻烦，当<code>count = 0</code>时，重新开始相加，就相当于重新截取一段 ，达到了双指针的效果</p>
+<h5 id="第122题-买股票的最佳时机二"><a href="#第122题-买股票的最佳时机二" class="headerlink" title="第122题 买股票的最佳时机二"></a>第122题 买股票的最佳时机二</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/">力扣题目链接</a></p>
+<p>解题思路：想得到最大利润，那么每次能赚钱就买，相加起来就是最大利润</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">prices</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> maxProfit = <span class="keyword">function</span>(<span class="params">prices</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> res = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span>(prices.<span class="property">length</span> &lt;= <span class="number">1</span>) <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>; i&lt; prices.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(prices[i] &gt; prices[i-<span class="number">1</span>]) &#123;</span><br><span class="line">            res += (prices[i] - prices[i-<span class="number">1</span>])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="第55题-跳跃游戏"><a href="#第55题-跳跃游戏" class="headerlink" title="第55题 跳跃游戏"></a>第55题 跳跃游戏</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/jump-game/">力扣题目链接</a></p>
+<p>解题思路：对每个能走到的位置进行遍历，判断这个位置能否到达终点。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">boolean</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> canJump = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.<span class="property">length</span> === <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    <span class="keyword">let</span> cover = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>; i &lt;= cover; i++) &#123;                <span class="comment">//cover是能走到的位置</span></span><br><span class="line">        cover = <span class="title class_">Math</span>.<span class="title function_">max</span>(cover, i+nums[i])</span><br><span class="line">        <span class="keyword">if</span>(cover &gt;= nums.<span class="property">length</span> - <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：此题的精髓在于使用for循环对每个能达到的位置进行判断，<code>for(let i =0; i &lt;= cover; i++)</code>,可以保证每种走法都进行确认</p>
+<h5 id="第45题-跳跃游戏二"><a href="#第45题-跳跃游戏二" class="headerlink" title="第45题 跳跃游戏二"></a>第45题 跳跃游戏二</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/jump-game-ii/">力扣题目链接</a></p>
+<p>解题思路：在进行跳跃时，有一个当前跳跃的最远距离，如果当前跳跃的最远距离不能够到达终点，就需要在跳一次，那么就需要下一次跳跃的最远距离</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> jump = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> curDistance = <span class="number">0</span>, nextDistance = <span class="number">0</span>, times = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span>(nums.<span class="property">length</span> &lt;= <span class="number">1</span>) <span class="keyword">return</span> times</span><br><span class="line">    <span class="comment">// for(let i = 0; i &lt; nums.length -1; i++) &#123;</span></span><br><span class="line">    <span class="comment">//     nextDistance = Math.max(i + nums[i], nextDistance)</span></span><br><span class="line">    <span class="comment">//     if(i === curDistance) &#123;</span></span><br><span class="line">    <span class="comment">//         times++</span></span><br><span class="line">    <span class="comment">//         curDistance = nextDistance</span></span><br><span class="line">    <span class="comment">//     &#125;</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.<span class="property">length</span>; i++) &#123;                   <span class="comment">//上下两种方法均可</span></span><br><span class="line">        nextDistance = <span class="title class_">Math</span>.<span class="title function_">max</span>(i + nums[i], nextDistance)</span><br><span class="line">        <span class="keyword">if</span>(i === curDistance) &#123;</span><br><span class="line">            <span class="keyword">if</span>(curDistance &lt; nums.<span class="property">length</span> - <span class="number">1</span>) &#123;</span><br><span class="line">                times++</span><br><span class="line">                curDistance = nextDistance</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> times</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：此题难度比上一题大很多，上一题只要能够保证距离能够cover到终点即可，这一题求最少次数，那么就需要在此步能跳到的范围内走到最远距离并且找到下一把的最远距离，看能否到达终点</p>
+<h5 id="第1005题-K次取反后最大化的数组和"><a href="#第1005题-K次取反后最大化的数组和" class="headerlink" title="第1005题  K次取反后最大化的数组和"></a>第1005题  K次取反后最大化的数组和</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximize-sum-of-array-after-k-negations/">力扣题目链接</a></p>
+<p>解题思路：现将数组安绝对值排序，然后进行遍历，如何数值小于零，就取相反值。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">k</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> largestSumAfterKNegations = <span class="keyword">function</span>(<span class="params">nums, k</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> len = nums.<span class="property">length</span> -<span class="number">1</span></span><br><span class="line">    nums.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> <span class="title class_">Math</span>.<span class="title function_">abs</span>(b) - <span class="title class_">Math</span>.<span class="title function_">abs</span>(a))</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>; i &lt; nums.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(k &gt; <span class="number">0</span> &amp;&amp; nums[i] &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            nums[i] = -nums[i]</span><br><span class="line">            k--</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(k &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        nums[len] = - nums[len]</span><br><span class="line">        k--</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums.<span class="title function_">reduce</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="第134题-加油站"><a href="#第134题-加油站" class="headerlink" title="第134题 加油站"></a>第134题 加油站</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/gas-station/">力扣题目链接</a></p>
+<p>解题思路：可以知道，起点必须是<code>gas[i] &gt; cost[i]</code>的点，那么假设肯定能够跑过，有汽油少于消耗的点，就肯定有汽油大于消耗的点，我们就去找汽油大于消耗的点</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">gas</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">cost</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> canCompleteCircuit = <span class="keyword">function</span>(<span class="params">gas, cost</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> totalSum = <span class="number">0</span>, curSum = <span class="number">0</span>, start = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; gas.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        curSum += gas[i] - cost[i]</span><br><span class="line">        totalSum += gas[i] - cost[i]</span><br><span class="line">        <span class="keyword">if</span>(curSum &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            start = i + <span class="number">1</span>           <span class="comment">//小心迭代量，curSum &lt; 0 表示是i位置不能作为七点，所以要i+1</span></span><br><span class="line">            curSum = <span class="number">0</span>              <span class="comment">//累加遇到﹣，清零，从头开始</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(totalSum &lt; <span class="number">0</span>) <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> start</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：<code>curSum &lt; 0</code>时，证明i坚决不能当起点，所以要重新以 i+1当起点，看能否满足。起点curSum必须为0 。其实累加之和为负，要重新开始，就有清零操作</p>
+<h5 id="第135题-分发糖果"><a href="#第135题-分发糖果" class="headerlink" title="第135题 分发糖果"></a>第135题 分发糖果</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/candy/">力扣题目链接</a></p>
+<p>解题思路：分发糖果需要左右兼顾，但是同时左右兼顾是不能实现的，所以先兼顾左边，在兼顾右边即可</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">ratings</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> candy = <span class="keyword">function</span>(<span class="params">ratings</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> n = ratings.<span class="property">length</span></span><br><span class="line">    <span class="keyword">if</span>(n === <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">let</span> candyArr = <span class="keyword">new</span> <span class="title class_">Array</span>(n).<span class="title function_">fill</span>(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(ratings[i] &gt; ratings[i-<span class="number">1</span>]) &#123;</span><br><span class="line">            candyArr[i] = candyArr[i-<span class="number">1</span>] + <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = n-<span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">       <span class="keyword">if</span>(ratings[i] &gt; ratings[i+<span class="number">1</span>]) &#123;</span><br><span class="line">           candyArr[i] = <span class="title class_">Math</span>.<span class="title function_">max</span>(candyArr[i] , candyArr[i+<span class="number">1</span>] + <span class="number">1</span>)      <span class="comment">//要兼顾两边</span></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> candyArr.<span class="title function_">reduce</span>(<span class="function">(<span class="params">a , b</span>) =&gt;</span> a+b)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：<code>candyArr[i] = Math.max(candyArr[i] , candyArr[i+1] + 1)</code>左边已经兼顾了，需要同时兼顾右边，左右都兼顾，取两者最大值</p>
+<h5 id="第406题-根据身高重新排列"><a href="#第406题-根据身高重新排列" class="headerlink" title="第406题 根据身高重新排列"></a>第406题 根据身高重新排列</h5><p>解题思路：本题跟分发糖果相似，都是具有两个因素需要考虑，所以不能够同时考虑两者，需要先考虑好一个因素后再去考虑另外一个因素。那么就可以先将数组按照从高到矮的顺序排列，然后在考虑有几个人在前面的问题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[][]</span>&#125; <span class="variable">people</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[][]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> reconstructQueue = <span class="keyword">function</span>(<span class="params">people</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> queue = []</span><br><span class="line">    people.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;     <span class="comment">//而为数组的排序方式； API的参数代码数组的元素</span></span><br><span class="line">        <span class="keyword">if</span>(a[<span class="number">0</span>] !== b[<span class="number">0</span>]) &#123;</span><br><span class="line">            <span class="keyword">return</span> b[<span class="number">0</span>] - a[<span class="number">0</span>]</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> a[<span class="number">1</span>] - b[<span class="number">1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; people.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        queue.<span class="title function_">splice</span>(people[i][<span class="number">1</span>], <span class="number">0</span>, people[i])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> queue</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="第452题-用最少数目的箭射爆气球"><a href="#第452题-用最少数目的箭射爆气球" class="headerlink" title="第452题 用最少数目的箭射爆气球"></a>第452题 用最少数目的箭射爆气球</h5><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-number-of-arrows-to-burst-balloons/">力扣题目链接</a></p>
+<p>解题思路：当气球重叠的时候，就能一箭多个，所以就是判断重叠气球数目，当不重叠时，就需要多一支箭</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[][]</span>&#125; <span class="variable">points</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> findMinArrowShots = <span class="keyword">function</span>(<span class="params">points</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> number = <span class="number">0</span>, end = -<span class="title class_">Infinity</span></span><br><span class="line">    points.<span class="title function_">sort</span>(<span class="function">(<span class="params">a , b</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[<span class="number">0</span>] !== b[<span class="number">0</span>]) &#123;</span><br><span class="line">            <span class="keyword">return</span> a[<span class="number">0</span>] - b[<span class="number">0</span>]</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> a[<span class="number">1</span>] - b[<span class="number">1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; points.<span class="property">length</span>; i++) &#123;    <span class="comment">//考虑不全面，只考虑了不能搭上，搭上后如何没有考虑</span></span><br><span class="line">        <span class="keyword">if</span>(points[i][<span class="number">0</span>] &gt; end) &#123;</span><br><span class="line">            number++</span><br><span class="line">            end = points[i][<span class="number">1</span>]</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            end = <span class="title class_">Math</span>.<span class="title function_">min</span>(end , points[i][<span class="number">1</span>])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> number</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：1、end是会发生变化的，并不是每个区间的右端点，这个后面区间问题也需要考虑；2、发生多个重叠时，需要搭在最小的端点才能把所有区间射爆<code>end = Math.min(end , points[i][1])</code></p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2020 Yelog
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
